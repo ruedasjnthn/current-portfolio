@@ -7,6 +7,7 @@ import Header from "../components/header";
 import About from "../components/about";
 import TechStack from "../components/techstack";
 import Portfolio from "../components/portfolio";
+import Experience from '../components/experience'
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +23,8 @@ const Home: NextPage = () => {
       <Header />
       <About />
       <TechStack />
-      {/* <Portfolio /> */}
+      <Portfolio />
+      <Experience />
     </Layout>
   );
 };

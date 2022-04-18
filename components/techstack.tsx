@@ -1,45 +1,38 @@
 import { useState, useEffect } from "react";
 
 import tw from "tailwind-styled-components";
-import * as Si from "react-icons/si";
 
 import { getStaticProps } from "../helper/contentful";
-
-// interface Skills {
-
-// }
-
-// interface ContentResponse {
-//   content: Skills[]
-// }
 
 const TechStack = () => {
   const [content, setContent] = useState<any>();
 
   useEffect(() => {
-    getStaticProps().then((skills: any) => setContent(skills));
+    getStaticProps(techstack).then((skills: any) => setContent(skills));
   }, []);
-  console.log(content);
+
   return (
     <Container>
       <Divider />
       <Title>Techstack</Title>
       <SkillContainer>
-      {content?.sort((a: any, b: any) => (a.fields.id > b.fields.id) ? 1 : -1).map((data: any) => (
-        <Skill>
-          <Icon>
-            <svg
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>{data.fields.skill}</title>
-              <path fill="white" d={data.fields.icon} />
-            </svg>
-          </Icon>
-          <span>{data.fields.skill}</span>
-        </Skill>
-      ))}
+        {content
+          ?.sort((a: any, b: any) => (a.fields.id > b.fields.id ? 1 : -1))
+          .map((data: any) => (
+            <Skill>
+              <Icon>
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>{data.fields.skill}</title>
+                  <path fill="white" d={data.fields.icon} />
+                </svg>
+              </Icon>
+              <SkillTitle>{data.fields.skill}</SkillTitle>
+            </Skill>
+          ))}
       </SkillContainer>
     </Container>
   );
@@ -53,6 +46,7 @@ const Title = tw.div`
   text-3xl
   font-bold
   text-white
+  mb-8
 `;
 
 const Divider = tw.div`
@@ -66,16 +60,28 @@ const Divider = tw.div`
 const SkillContainer = tw.div`
   flex
   flex-row
+  flex-wrap
+  gap-4
 `;
 
 const Skill = tw.div`
-  
+
 `;
 
 const Icon = tw.div`
-  w-20
-  h-20
-  
+  w-12
+  h-12
+  flex
+  mx-auto
+  lg:w-16
+  lg:h-16
+  `;
+
+const SkillTitle = tw.div`
+  whitespace-nowrap
+  text-center
+  text-secondary
+  text-sm
 `;
 
 export default TechStack;

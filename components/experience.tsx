@@ -6,17 +6,17 @@ import { getStaticProps } from "../helper/contentful";
 
 
 
-const Portfolio = () => {
+const Experience = () => {
   const [content, setContent] = useState<any>();
 
   useEffect(() => {
-    getStaticProps(project).then((project: any) => setContent(project));
+    getStaticProps().then((skills: any) => setContent(skills));
   }, []);
 
   return (
     <Container>
       <Divider />
-      <Title>Portfolio</Title>
+      <Title>Experience</Title>
     </Container>
   );
 };
@@ -41,4 +41,4 @@ const Divider = tw.div`
 `;
 
 
-export default Portfolio;
+export default Experience;
