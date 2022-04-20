@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import tw from "tailwind-styled-components";
+import Button from "./button";
 
 const Header = () => {
   const [click, setClick] = useState<Boolean>(false);
@@ -12,23 +13,23 @@ const Header = () => {
       <Logo>Jonathan Ruedas</Logo>
       <Nav $active={click}>
         <NavItem>
-          <Link href="#home" as={"./"}>
+          <Link href="#home">
             Home
           </Link>
         </NavItem>
         <NavItem>
-          <Link href="#portfolio" as={"./"}>
+          <Link href="#portfolio">
             Portfolio
           </Link>
         </NavItem>
         <NavItem>
-          <Link href="#experience" as={"./"}>
+          <Link href="#experience">
             Experience
           </Link>
         </NavItem>
         <NavItem>
-          <Link href="#hire" as={"./"} passHref>
-            <Button>Hire Me</Button>
+          <Link href="#hire" passHref>
+            <Button children="Hire me" type="button" />
           </Link>
         </NavItem>
       </Nav>
@@ -99,13 +100,6 @@ const NavItem = tw.li`
   hover:text-selected-text
   lg:ml-12
   lg:py-0
-`;
-
-const Button = tw.button`
-  bg-theme
-  font-bold
-  px-6
-  py-2
 `;
 
 export default Header;

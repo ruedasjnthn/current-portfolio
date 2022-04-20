@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
+    "@hookform/resolvers": "^2.8.8",
     "contentful": "^9.1.22",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
-    "tailwind-styled-components": "^2.1.6"
+    "tailwind-styled-components": "^2.1.6",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "17.0.23",

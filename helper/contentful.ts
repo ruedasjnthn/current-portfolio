@@ -1,6 +1,6 @@
 import { createClient } from 'contentful'
 
-export async function getStaticProps(content: any) {
+export async function getStaticProps(content:String) {
 
     const client = createClient({
         space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,

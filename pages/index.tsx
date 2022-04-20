@@ -8,6 +8,7 @@ import About from "../components/about";
 import TechStack from "../components/techstack";
 import Portfolio from "../components/portfolio";
 import Experience from '../components/experience'
+import Contact from "../components/contact";
 
 const Home: NextPage = () => {
   return (
@@ -18,13 +19,14 @@ const Home: NextPage = () => {
           name="description"
           content="jonathan ruedas | software developer"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <Header />
       <About />
       <TechStack />
       <Portfolio />
       <Experience />
+      <Contact />
     </Layout>
   );
 };

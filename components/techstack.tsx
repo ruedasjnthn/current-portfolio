@@ -8,7 +8,7 @@ const TechStack = () => {
   const [content, setContent] = useState<any>();
 
   useEffect(() => {
-    getStaticProps(techstack).then((skills: any) => setContent(skills));
+    getStaticProps("techstack").then((skills: any) => setContent(skills));
   }, []);
 
   return (
@@ -42,19 +42,19 @@ const Container = tw.div`
   py-12
 `;
 
-const Title = tw.div`
-  text-3xl
-  font-bold
-  text-white
-  mb-8
-`;
-
 const Divider = tw.div`
   w-12
   h-2
   rounded-lg
   bg-theme
   mb-1
+`;
+
+const Title = tw.div`
+  text-3xl
+  font-bold
+  text-white
+  mb-8
 `;
 
 const SkillContainer = tw.div`
