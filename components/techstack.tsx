@@ -19,7 +19,7 @@ const TechStack = () => {
         {content
           ?.sort((a: any, b: any) => (a.fields.id > b.fields.id ? 1 : -1))
           .map((data: any) => (
-            <Skill>
+            <Skill key={data.fields.id}>
               <Icon>
                 <svg
                   role="img"

@@ -29,7 +29,7 @@ const Header = () => {
         </NavItem>
         <NavItem>
           <Link href="#hire" passHref>
-            <Button children="Hire me" type="button" />
+            <Button type="button">Hire me</Button>
           </Link>
         </NavItem>
       </Nav>
@@ -76,7 +76,7 @@ const Menu = tw.div`
 `;
 
 const Nav = tw.ul<StyleProps>`
-  ${(p) => (p.$active ? "block" : "hidden")}
+  ${(p:any) => (p.$active ? "block" : "hidden")}
   absolute
   top-[76px]
   left-0

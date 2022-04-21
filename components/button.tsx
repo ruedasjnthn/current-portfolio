@@ -4,12 +4,13 @@ interface Props {
     children: React.ReactNode
     type: 'button' | 'submit' | 'reset' | undefined
     onClick?: () => void
+    disabled?: boolean | undefined
 }
 
-const Button: React.FC<Props> = ({ children, type, onClick }) => {
+const Button: React.FC<Props> = ({ children, type, onClick, disabled }) => {
 
   return (
-    <ButtonWrapper onClick={onClick} type={type}>
+    <ButtonWrapper onClick={onClick} type={type} disabled={disabled}>
       {children}
     </ButtonWrapper>
   );

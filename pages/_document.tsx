@@ -7,7 +7,7 @@ class Document extends NextDocument {
       <Html>
         <Head>
           <link href="https://fonts.googleapis.com" rel="preconnect" />
-          <link href="https://fonts.gstatic.com" data-crossorigin />
+          <link href="https://fonts.gstatic.com" data-crossorigin rel="preconnect" />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap"
             rel="stylesheet"

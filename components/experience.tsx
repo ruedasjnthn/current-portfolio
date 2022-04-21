@@ -24,7 +24,7 @@ const Experience = () => {
       {content
         ?.sort((a: any, b: any) => (a.fields.id > b.fields.id ? 1 : -1))
         .map((data: any) => (
-          <ExperienceContainer>
+          <ExperienceContainer key={data.fields.id}>
             <Position>{data.fields.position}</Position>
             <Company>{data.fields.company}</Company>
             <Bullet>&#8226;</Bullet>

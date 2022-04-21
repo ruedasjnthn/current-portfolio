@@ -26,7 +26,7 @@ const About = () => {
         </Button>
       </InfoContainer>
       <ImageContainer>
-        <Image src="/myself.png"/>
+        <Image src="/myself.png" alt="a picture of myself"/>
       </ImageContainer>
     </Container>
   );

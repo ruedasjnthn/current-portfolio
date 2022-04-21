@@ -11,8 +11,7 @@ const Portfolio = () => {
   const handleClick = (url: string) => window.open(url, "_blank");
 
   useEffect(() => {
-    getStaticProps("project").then((project: any) =>{ setContent(project)
-    console.log(project.fields)});
+    getStaticProps("project").then((project: any) => setContent(project));
   }, []);
 
   return (
@@ -23,7 +22,7 @@ const Portfolio = () => {
       {content
         ?.sort((a: any, b: any) => (a.fields.id > b.fields.id ? 1 : -1))
         .map((data: any) => (
-          <ProjectContainer>
+          <ProjectContainer key={data.fields.id}>
             <ImageContainer>
               <Thumbnail src={"https:" + data.fields.image.fields.file.url} />
             </ImageContainer>
@@ -35,17 +34,19 @@ const Portfolio = () => {
               <ButtonContainer>
                 {data.fields.site ? (
                   <Button
-                    children="Live Site"
                     onClick={() => handleClick(data.fields.site)}
                     type="button"
-                  />
+                  >
+                    Live Site
+                  </Button>
                 ) : null}
                 {data.fields.sourceCode ? (
                   <Button
-                    children="Source Code"
                     onClick={() => handleClick(data.fields.sourceCode)}
                     type="button"
-                  />
+                  >
+                    Source Code
+                  </Button>
                 ) : null}
               </ButtonContainer>
             </InfoContainer>
