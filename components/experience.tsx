@@ -58,11 +58,10 @@ const Title = tw.div`
 
 const Desc = tw.p`
 text-secondary
-mb-8
 `;
 
 const ExperienceContainer = tw.div`
-  
+  mt-8
 `;
 
 const Position = tw.h1`
