@@ -131,9 +131,10 @@ const ImageContainer = tw.div`
 const Thumbnail = tw.img`
   block
   max-w-auto
-  max-h-[300px]
+  max-h-[200px]
+  max-w-[300px]
   lg:max-h-[400px]
-  max-w-[600px]
+  lg:max-w-[600px]
   rounded-lg
 `;
 
